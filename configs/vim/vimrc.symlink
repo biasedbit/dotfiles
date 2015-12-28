@@ -1,0 +1,12 @@
+syntax on
+set ruler
+set number
+
+" Show gradle files as groovy
+au BufNewFile,BufRead *.gradle setf groovy
+
+" Break commit messages at line 72
+au FileType gitcommit set tw=72
+
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on

@@ -1,0 +1,34 @@
+export ZSH="$HOME/.dotfiles/oh-my-zsh"
+
+ZSH_THEME="kolo"
+ZSH_CUSTOM="$HOME/.dotfiles/oh-my-zsh-custom"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='green'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='red'
+
+plugins=(
+  'brew'
+  'encode64'
+  'gem'
+  'git'
+  'gitignore'
+  'gradle'
+  'history'
+  'osx'
+  'python'
+  'pip'
+  'pod'
+  'rbenv'
+  'ruby'
+  'autoenv'
+  'thefuck'
+  'themes'
+  'virtualenvwrapper'
+  'zsh-completions'
+  'zsh-syntax-highlighting'
+  'history-substring-search'
+)
+
+source $ZSH/oh-my-zsh.sh
