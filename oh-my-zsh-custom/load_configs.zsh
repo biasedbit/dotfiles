@@ -8,13 +8,11 @@ then
   source $LOCALRC
 fi
 
-# all of our zsh files
+# Source all config/**/*.zsh files
 typeset -U config_files
 config_files=($CONFIGS/**/*.zsh)
 
-# load the path files
-for file in ${(M)config_files}
-do
+for file in ${(M)config_files}; do
   source $file
 done
 
