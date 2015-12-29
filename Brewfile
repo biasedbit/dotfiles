@@ -29,8 +29,16 @@ brew 'postgresql'
 
 # Apps
 
+cask 'iterm2'
+cask 'rowanj-gitx'
+cask 'android-studio-canary'
+cask 'pycharm-ce'
+cask 'fabric'
 cask 'sublime-text3'
 cask 'google-chrome'
+cask 'google-drive'
+cask 'dropbox'
 cask 'slack'
 cask 'transmission'
 cask 'vlc'
+cask 'spotify'
