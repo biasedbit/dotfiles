@@ -1,3 +1,6 @@
+# Reload shell
+alias reload!='. ~/.zshrc'
+
 # Print all ls * with human readable sizes and colors
 alias ls="ls -Gh"
 

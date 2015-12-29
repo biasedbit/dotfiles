@@ -19,6 +19,7 @@ fi
 
 # Install all packages in the Brewfile
 echo "* Installing all packages in Brewfile..."
+brew update
 brew bundle -v
 brew cleanup
 brew cask cleanup

@@ -5,7 +5,6 @@ tap 'homebrew/bundle'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 
-
 # Fundamentals
 brew 'zsh'
 brew 'vim'
