@@ -46,5 +46,5 @@ install_java () {
   echo "* Done"
 }
 
-install_java 7 7u80-b15/jdk-7u80-macosx-x64
+#install_java 7 7u80-b15/jdk-7u80-macosx-x64
 install_java 8 8u66-b17/jdk-8u66-macosx-x64
