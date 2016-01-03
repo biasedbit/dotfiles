@@ -1,6 +1,6 @@
 export ZSH="$HOME/.dotfiles/oh-my-zsh"
 
-ZSH_THEME="kolo"
+ZSH_THEME="kolo-custom"
 ZSH_CUSTOM="$HOME/.dotfiles/oh-my-zsh-custom"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
