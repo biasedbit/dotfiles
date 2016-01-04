@@ -11,6 +11,7 @@ brew 'vim'
 brew 'git'
 brew 'autoenv'
 brew 'imagemagick'
+brew 'ffmpeg'
 
 # Ruby
 brew 'rbenv'
