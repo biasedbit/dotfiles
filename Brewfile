@@ -19,7 +19,8 @@ brew 'ruby-build'
 # Python
 brew 'python'
 
-# Android
+# Java & Android
+brew 'gradle'
 brew 'android-sdk'
 
 # DBs
@@ -42,3 +43,5 @@ cask 'slack'
 cask 'transmission'
 cask 'vlc'
 cask 'spotify'
+cask 'torbrowser'
+cask 'daisydisk'
