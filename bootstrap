@@ -98,12 +98,6 @@ install_dotfiles () {
   done
 }
 
-# Install Homebrew
-if test ! $(which brew); then
-  info "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
 # Grab all submodules before moving on
 info "Initializing submodules..."
 git submodule update --init --recursive
