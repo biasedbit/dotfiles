@@ -4,4 +4,6 @@
 .env
 .out
 .gradletasknamecache
+# Ignore all files whose name begins with "gitignore.*"
+gitignore.*
 
