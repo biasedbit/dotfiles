@@ -21,6 +21,7 @@ brew 'ruby-build'
 brew 'python'
 
 # Java & Android
+cask 'java'
 brew 'gradle'
 brew 'android-sdk'
 
