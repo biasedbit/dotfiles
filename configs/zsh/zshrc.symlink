@@ -28,6 +28,7 @@ plugins=(
   'virtualenvwrapper'
   'zsh-completions'
   'zsh-syntax-highlighting'
+  'zsh-navigation-tools'
   'history-substring-search'
 )
 
