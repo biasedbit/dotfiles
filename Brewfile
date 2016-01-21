@@ -20,6 +20,9 @@ brew 'ruby-build'
 # Python
 brew 'python'
 
+# Go
+brew 'go'
+
 # Java & Android
 cask 'java'
 brew 'gradle'
