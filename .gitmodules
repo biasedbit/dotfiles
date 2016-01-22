@@ -7,3 +7,6 @@
 [submodule "oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
 	path = oh-my-zsh-custom/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "oh-my-zsh-custom/plugins/autoenv"]
+	path = oh-my-zsh-custom/plugins/autoenv
+	url = git@github.com:horosgrisa/autoenv.git
