@@ -6,4 +6,4 @@
 .gradletasknamecache
 # Ignore all files whose name begins with "gitignore.*"
 gitignore.*
-
+.idea
