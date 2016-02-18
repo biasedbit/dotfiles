@@ -4,6 +4,8 @@
 .env
 .out
 .gradletasknamecache
+.idea
+# Don't commit "Scratchpad" Swift playgrounds
+Scratchpad.playground
 # Ignore all files whose name begins with "gitignore.*"
 gitignore.*
-.idea
