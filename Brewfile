@@ -30,6 +30,7 @@ brew 'android-sdk'
 
 # DBs
 brew 'postgresql'
+brew 'redis'
 
 
 # Apps
