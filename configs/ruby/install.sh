@@ -1,5 +1,5 @@
-rbenv install 2.2.4
-rbenv global 2.2.4
+rbenv install 2.3.0
+rbenv global 2.3.0
 rbenv rehash
 
 gem update --system
