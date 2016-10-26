@@ -2,7 +2,7 @@
         name = Bruno de Carvalho
         email = bruno@biasedbit.com
 [credential]
-        helper = osxkeychain
+	helper = osxkeychain
 [alias]
         co = checkout
         count = !git shortlog -sn
