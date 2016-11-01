@@ -32,6 +32,8 @@ brew 'android-sdk'
 brew 'postgresql'
 brew 'redis'
 
+# Other
+brew 'awscli'
 
 # Apps
 
