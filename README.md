@@ -1,4 +1,10 @@
 Dotfiles!
 =========
 
-![](http://d.pr/i/yB73.png)
+
+```sh
+$ ./01-install
+$ ./01-bootstrap
+$ chsh -s $(which zsh)
+```
+

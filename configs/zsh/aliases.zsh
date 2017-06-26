@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Reload shell
 alias reload!='. ~/.zshrc'
 

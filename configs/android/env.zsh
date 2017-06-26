@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+case "$OSTYPE" in
+  darwin*)
+    export ANDROID_HOME="/usr/local/opt/android-sdk"
+    ;;
+esac

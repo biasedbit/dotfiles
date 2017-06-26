@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+#
+# Run all dotfiles installers.
+set -e
+cd "$(dirname $0)"
+
+# ---
+
+case "$OSTYPE" in
+  "linux-gnu")
+    sh "Aptfile"
+    echo ""
+    ;;
+  darwin*)
+    # Install homebrew if not already installed
+    if test ! $(which brew); then
+      echo "* Installing Homebrew..."
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    # Install all packages in the Brewfile
+    echo "* Installing all packages in Brewfile..."
+    brew update
+    brew bundle -v
+    brew cleanup
+    brew cask cleanup
+    ;;
+  *)
+    echo "Unknown OS ($OSTYPE), skipping package installation."
+    ;;
+esac
+
+# ---
+
+CONFIG_DIR="$(cd "$(dirname "$0")" && pwd -P)/configs"
+
+run_installers() {
+  # list of configs/env setup to ignored, per OS
+  local ignored=''
+  case "$OSTYPE" in
+    darwin*)
+      ;;
+    *)
+      ignored='ios osx'
+      ;;
+  esac
+
+  # Some installers need to run first (e.g. ruby, to install a rbenv ruby)
+  local prioritized='ruby'
+  # Filter out any OS-specific ignored setup
+  for i in ${ignored}; do prioritized=$(echo "${prioritized}" | grep -v $i); done
+
+  for installer in ${prioritized}; do
+    echo "  - $prioritized/install.sh"
+    sh -c "$config_dir/$installer/install.sh"
+  done
+
+  # Find the rest of the installers and run them iteratively; order doesn't matter.
+  local installers=$(ls $CONFIG_DIR/**/install.sh)
+  # Filter out prioritized (already run) and OS-specific ignores
+  for p in ${prioritized}; do installers=$(echo "${installers}" | grep -v $p); done
+  for i in ${ignored}; do installers=$(echo "${installers}" | grep -v $i); done
+
+  # load the path files
+  for installer in ${installers}; do
+    conf="$(basename $(dirname ${installer}))"
+    name=$(basename $(dirname ${installer}))/$(basename ${installer})
+    echo "  - $name"
+    sh -c "${installer}"
+  done
+}
+
+echo "* Running all installers..."
+run_installers
+
+echo ""
+echo "* All done!"

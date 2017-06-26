@@ -9,9 +9,9 @@ tap 'caskroom/versions'
 brew 'zsh'
 brew 'vim'
 brew 'git'
-brew 'autoenv'
 brew 'imagemagick'
 brew 'ffmpeg'
+brew 'htop'
 
 # Ruby
 brew 'rbenv'

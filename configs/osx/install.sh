@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+if [[ "$OSTYPE" != darwin* ]]; then return; fi
+
 # Sets reasonable OS X defaults.
 #
 # More at https://github.com/mathiasbynens/dotfiles/blob/master/.osx
