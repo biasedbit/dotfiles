@@ -8,7 +8,7 @@ load_configs() {
     darwin*)
       modules=('git' 'golang' 'homebrew' 'ios' 'java' 'ruby' 'zsh')
       ;;
-    "linux")
+    "linux-gnu")
       modules=('git' 'golang' 'java' 'ruby' 'zsh')
       ;;
     "cygwin")
