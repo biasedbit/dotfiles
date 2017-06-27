@@ -3,9 +3,6 @@
         email = bruno@biasedbit.com
 [credential]
 	helper = osxkeychain
-[alias]
-        co = checkout
-        count = !git shortlog -sn
 [color]
         diff = auto
         status = auto
@@ -16,9 +13,11 @@
         editor = vim
         pager = less -F -X
 [alias]
+        co = checkout
+        count = !git shortlog -sn
         undo = reset --soft HEAD^
-        nuke = !git add . && git reset --hard HEAD
         unstage = reset HEAD --
         last = log -1 HEAD
+        nuke = !git add . && git reset --hard HEAD
 [push]
 	default = simple

@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# Wouldn't it be nice if apt had something like a Brewfile?
 set -e
 
 # Get sudo just to run the apt installs
@@ -12,7 +13,6 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
 sudo echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
-# Fundamentals
 apt install zsh
 apt install vim
 apt install git
@@ -22,24 +22,16 @@ apt install htop
 apt install autoconf
 apt install libssl-dev
 
-# Ruby
 apt install rbenv
 apt install ruby-build
-
-# Python
 apt install python-dev
 apt install python-pip
 apt install python-setuptools
-
-# Go
 apt install golang
-
-# Java
 apt install oracle-java8-installer
 apt install oracle-java9-installer
 apt install gradle
 
-# Apps
 apt install sublime-text-installer
 apt install spotify-client
 apt install google-chrome-stable

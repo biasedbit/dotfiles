@@ -3,30 +3,31 @@
 CONFIG_DIR="$(cd "$(dirname "$0")/.." && pwd -P)/configs"
 
 load_configs() {
-  # list of configs/env setup to ignored, per OS
-  local ignored=''
+  local modules= # list of modules to source *.zsh files from; order matters
   case "$OSTYPE" in
     darwin*)
+      modules=('git' 'golang' 'homebrew' 'ios' 'java' 'ruby' 'zsh')
+      ;;
+    "linux")
+      modules=('git' 'golang' 'java' 'ruby' 'zsh')
+      ;;
+    "cygwin")
+      modules=('git' 'zsh')
       ;;
     *)
-      ignored=('ios' 'homebrew')
+      echo "! Unsupported OS ($OSTYPE); skipping custom module load."
       ;;
   esac
 
-  # Source all config/**/*.zsh files, respecting ignores defined above.
-  local config_files=($CONFIG_DIR/**/*.zsh)
-  for i in ${ignored}; do
-    config_files=("${(@)config_files:#*$i*}")
-  done
-
-  for f in ${config_files}; do
-    source $f
+  for module in ${modules}; do
+    local files=($CONFIG_DIR/$module/*.zsh)
+    for file in $files; do source $file; done
   done
 }
 
 load_configs
 
-# Source .localrc if found. Keep private stuff in here.
+# Source .localrc if found. Sensitive or machine-specific stuff in there.
 LOCALRC="$HOME/.localrc"
 if [[ -a $LOCALRC ]]; then
   source $LOCALRC
