@@ -4,6 +4,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
+tap 'caskroom/fonts'
 
 brew 'zsh'
 brew 'vim'
@@ -20,3 +21,5 @@ brew 'gradle'
 brew 'postgresql'
 brew 'redis'
 brew 'awscli'
+
+cask 'font-source-code-pro'
