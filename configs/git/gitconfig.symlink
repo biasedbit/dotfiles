@@ -21,3 +21,5 @@
         nuke = !git add . && git reset --hard HEAD
 [push]
 	default = simple
+[grep]
+	lineNumber = true
