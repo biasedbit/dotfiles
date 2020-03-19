@@ -2,13 +2,13 @@
 set -e
 case "$OSTYPE" in
   darwin*)
-    version="2.3.0"
+    version="2.6.5"
     ;;
   "linux-gnu")
-    version="2.3.0-dev"
+    version="2.6.5-dev"
     ;;
   *)
-    version="2.2.3"
+    version="2.6.5"
     ;;
 esac
 
