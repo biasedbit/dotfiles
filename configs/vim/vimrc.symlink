@@ -10,3 +10,5 @@ au FileType gitcommit set tw=72
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+set backspace=indent,eol,start
