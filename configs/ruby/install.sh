@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
+VERSION="2.6.6"
 set -e
 case "$OSTYPE" in
   darwin*)
-    version="2.6.5"
+    version="$VERSION"
     ;;
   "linux-gnu")
-    version="2.6.5-dev"
+    version="$VERSION-dev"
     ;;
   *)
-    version="2.6.5"
+    version="$VERSION"
     ;;
 esac
 

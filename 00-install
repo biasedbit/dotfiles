@@ -19,7 +19,6 @@ case "$OSTYPE" in
     brew update
     brew bundle -v
     brew cleanup
-    brew cask cleanup
     ;;
   "linux-gnu")
     echo "* Installing packages..."
@@ -44,7 +43,7 @@ run_installers() {
   local modules=  # list of modules to run installers from; order matters
   case "$OSTYPE" in
     darwin*)
-      modules='ruby golang ios osx'
+      modules='ruby golang ios'
       ;;
     "linux")
       modules='ruby golang'

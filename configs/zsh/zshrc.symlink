@@ -27,7 +27,9 @@ plugins=(
   'zsh-completions'
   'zsh-syntax-highlighting'
   'zsh-navigation-tools'
-  'history-substring-search'
+  'fzf'
 )
 
 source $ZSH/oh-my-zsh.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

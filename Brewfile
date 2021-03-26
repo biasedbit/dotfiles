@@ -10,14 +10,17 @@ brew 'git'
 brew 'imagemagick'
 brew 'ffmpeg'
 brew 'htop'
+brew 'fzf'
 
 brew 'rbenv'
 brew 'ruby-build'
 brew 'go'
-cask 'java'
+brew 'java'
 brew 'gradle'
 brew 'postgresql'
 brew 'redis'
 brew 'awscli'
 
+cask 'fork'
 cask 'font-source-code-pro'
+
