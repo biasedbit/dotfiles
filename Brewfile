@@ -2,9 +2,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
-tap 'caskroom/cask'
-tap 'caskroom/versions'
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
 
 brew 'zsh'
 brew 'vim'
