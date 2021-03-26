@@ -22,5 +22,6 @@ brew 'redis'
 brew 'awscli'
 
 cask 'fork'
+cask 'sublime-text'
 cask 'font-source-code-pro'
 
