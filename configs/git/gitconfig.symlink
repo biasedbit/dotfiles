@@ -1,6 +1,6 @@
 [user]
-        name = Bruno de Carvalho
-        email = bruno@biasedbit.com
+	name = Bruno de Carvalho
+	email = bruno@biasedbit.com
 [credential]
 	helper = osxkeychain
 [color]
