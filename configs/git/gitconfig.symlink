@@ -4,22 +4,24 @@
 [credential]
 	helper = osxkeychain
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
 [core]
-        excludesfile = ~/.gitignore_global
-        editor = vim
-        pager = less -F -X
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	pager = less -F -X
 [alias]
-        co = checkout
-        count = !git shortlog -sn
-        undo = reset --soft HEAD^
-        unstage = reset HEAD --
-        last = log -1 HEAD
-        nuke = !git add . && git reset --hard HEAD
+	co = checkout
+	count = !git shortlog -sn
+	undo = reset --soft HEAD^
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	nuke = !git add . && git reset --hard HEAD
 [push]
 	default = simple
 [grep]
 	lineNumber = true
+[include]
+	path = .gitconfig_local
