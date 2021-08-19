@@ -12,3 +12,7 @@ au FileType gitcommit set tw=72
 filetype indent plugin on
 
 set backspace=indent,eol,start
+
+" show invisible characters
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·
+set list
