@@ -17,7 +17,7 @@ plugins=(
   'gitignore'
   'gradle'
   'history'
-  'osx'
+  'macos'
   'python'
   'pod'
   'rbenv'
