@@ -25,3 +25,6 @@
 	lineNumber = true
 [include]
 	path = .gitconfig_local
+[url "https://github.com/"]
+        insteadOf = git://github.com/
+

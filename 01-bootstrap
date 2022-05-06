@@ -100,6 +100,7 @@ install_dotfiles () {
 
 # Grab all submodules before moving on
 info "Initializing submodules..."
+git config --global url."https://github.com/".insteadOf git://github.com/
 git submodule update --init --recursive
 
 # Install the dot files
