@@ -20,8 +20,15 @@ brew 'gradle'
 brew 'postgresql'
 brew 'redis'
 brew 'awscli'
+brew 'docker'
 
+cask 'iterm2'
+cask 'divvy'
 cask 'fork'
 cask 'sublime-text'
+cask 'spotify'
+cask 'google-drive'
+
+brew 'svn' # required for font below
 cask 'font-source-code-pro'
 
