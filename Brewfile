@@ -31,4 +31,3 @@ cask 'google-drive'
 
 brew 'svn' # required for font below
 cask 'font-source-code-pro'
-

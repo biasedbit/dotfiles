@@ -43,10 +43,10 @@ run_installers() {
   local modules=  # list of modules to run installers from; order matters
   case "$OSTYPE" in
     darwin*)
-      modules='ruby golang ios'
+      modules='ruby ios'
       ;;
-    "linux")
-      modules='ruby golang'
+    "linux-gnu")
+      modules='ruby'
       ;;
     "cygwin")
       modules=''
