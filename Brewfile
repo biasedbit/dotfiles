@@ -11,6 +11,7 @@ brew 'imagemagick'
 brew 'ffmpeg'
 brew 'htop'
 brew 'fzf'
+brew 'jq'
 
 brew 'rbenv'
 brew 'ruby-build'
@@ -23,11 +24,11 @@ brew 'awscli'
 brew 'docker'
 
 cask 'iterm2'
-cask 'divvy'
 cask 'fork'
 cask 'sublime-text'
 cask 'spotify'
 cask 'google-drive'
+cask 'visual-studio-code'
 
 brew 'svn' # required for font below
 cask 'font-source-code-pro'
