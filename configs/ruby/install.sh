@@ -15,7 +15,7 @@ case "$OSTYPE" in
     ;;
 esac
 
-#rbenv install $VERSION
+rbenv install $VERSION
 rbenv global $VERSION
 rbenv rehash
 
