@@ -9,12 +9,13 @@ sudo apt install -y\
   vim\
   git\
   fzf\
+  xsel\
+  curl\
   imagemagick\
   ffmpeg\
   htop\
   autoconf\
   libssl-dev\
-  curl\
   ca-certificates\
   gnupg\
   lsb-release
