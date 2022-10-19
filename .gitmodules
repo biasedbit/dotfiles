@@ -1,12 +1,12 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
+	url = ../../robbyrussell/oh-my-zsh.git
 [submodule "oh-my-zsh-custom/plugins/zsh-completions"]
 	path = oh-my-zsh-custom/plugins/zsh-completions
-	url = git@github.com:zsh-users/zsh-completions.git
+	url = ../../zsh-users/zsh-completions.git
 [submodule "oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
 	path = oh-my-zsh-custom/plugins/zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = ../../zsh-users/zsh-syntax-highlighting.git
 [submodule "oh-my-zsh-custom/plugins/autoenv"]
 	path = oh-my-zsh-custom/plugins/autoenv
-	url = git@github.com:horosgrisa/autoenv.git
+	url = ../../horosgrisa/autoenv.git
