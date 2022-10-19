@@ -4,7 +4,13 @@
 alias reload!='. ~/.zshrc'
 
 # Print all ls * with human readable sizes and colors
-alias ls="ls -Gh"
+case "$OSTYPE" in
+  darwin*)
+    alias ls="ls -Gh"
+    ;;
+  *)
+    alias ls="ls -Gh --color --group-directories-first -X"
+esac
 
 # Pipe public key to clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
