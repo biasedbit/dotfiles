@@ -27,8 +27,9 @@
 	autoSetupMerge = always
 [grep]
 	lineNumber = true
+# Include machine-specific overrides (like name/email/credential)
 [include]
 	path = .gitconfig_local
+# Always use SSH instead of HTTPS
 [url "https://github.com/"]
 	insteadOf = git://github.com/
-
