@@ -6,7 +6,7 @@ load_configs() {
   local modules= # list of modules to source *.zsh files from; order matters
   case "$OSTYPE" in
     darwin*)
-      modules=('git' 'homebrew' 'ios' 'java' 'ruby' 'zsh')
+      modules=('git' 'homebrew' 'java' 'ruby' 'zsh')
       ;;
     "linux-gnu")
       modules=('git' 'java' 'ruby' 'zsh')

@@ -43,7 +43,7 @@ run_installers() {
   local modules=  # list of modules to run installers from; order matters
   case "$OSTYPE" in
     darwin*)
-      modules='ruby ios'
+      modules='ruby'
       ;;
     "linux-gnu")
       modules='ruby'
