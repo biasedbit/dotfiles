@@ -19,8 +19,12 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	nuke = !git add . && git reset --hard HEAD
+# "git push" pushes to active branch
 [push]
-	default = simple
+	default = matching
+# "git pull" pulls to active branch
+[branch]
+	autoSetupMerge = always
 [grep]
 	lineNumber = true
 [include]
