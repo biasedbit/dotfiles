@@ -22,3 +22,4 @@ alias gg="git grep --break --heading --line-number"
 
 # copy current git branch name to clipboard
 alias gbcp="git rev-parse --abbrev-ref HEAD | tr -d '\n' | $CLIPBOARD_CMD"
+

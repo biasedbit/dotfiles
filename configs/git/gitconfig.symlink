@@ -33,3 +33,5 @@
 # Always use SSH instead of HTTPS
 [url "https://github.com/"]
 	insteadOf = git://github.com/
+[init]
+	defaultBranch = main
