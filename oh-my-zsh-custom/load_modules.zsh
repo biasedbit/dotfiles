@@ -11,9 +11,6 @@ load_configs() {
     "linux-gnu")
       modules=('git' 'java' 'ruby' 'zsh')
       ;;
-    "cygwin")
-      modules=('git' 'zsh')
-      ;;
     *)
       echo "! Unsupported OS ($OSTYPE); skipping custom module load."
       ;;

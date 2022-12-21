@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Wouldn't it be nice if apt had something like a Brewfile?
 set -e
 
 # Get basic tools going

@@ -25,11 +25,6 @@ case "$OSTYPE" in
     sh "Aptfile"
     echo ""
     ;;
-  "cygwin")
-    echo "* Installing packages..."
-    sh "Cygfile"
-    echo ""
-    ;;
   *)
     echo "Unknown OS ($OSTYPE), skipping package installation."
     ;;
@@ -47,9 +42,6 @@ run_installers() {
       ;;
     "linux-gnu")
       modules='ruby'
-      ;;
-    "cygwin")
-      modules=''
       ;;
     *)
       echo "! Unsupported OS ($OSTYPE); skipping module installation."
