@@ -7,10 +7,12 @@ alias reload!='. ~/.zshrc'
 case "$OSTYPE" in
   darwin*)
     alias ls="ls -Gh"
+    alias update="brew update && brew upgrade"
     CLIPBOARD_CMD="pbcopy"
     ;;
   *)
     alias ls="ls -Gh --color --group-directories-first -X"
+    alias update="sudo apt update && sudo apt upgrade"
     CLIPBOARD_CMD="xsel -ib"
 esac
 
