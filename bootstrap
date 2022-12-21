@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 #
-# Install all the dotfiles
-
-cd "$(dirname "$0")"
-DOTFILES_ROOT="$(pwd -P)/configs"
-
-set -e
-
-echo ''
+# Bootstrap a Unix env with common dofiles and tools.
+cd "$(dirname $0)"
 
 info () {
   printf "\r  [ \033[00;34m..\033[0m ] $1\n"
@@ -27,6 +21,55 @@ fail () {
   exit
 }
 
+# --- OS setup
+
+case "$OSTYPE" in
+  darwin*)
+    # Install homebrew if not already installed
+    if test ! $(which brew); then
+      info "Installing Homebrew..."
+      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    # Install all packages in the Brewfile
+    info "Installing all packages in Brewfile..."
+    brew update
+    brew bundle -v
+    brew cleanup
+    ;;
+  "linux-gnu")
+    info "Installing packages..."
+    sh "Aptfile"
+    echo ""
+    ;;
+  *)
+    fail "Unknown OS ($OSTYPE), exiting."
+    ;;
+esac
+
+# --- Install modules
+
+CONFIG_DIR="$(cd "$(dirname "$0")" && pwd -P)/configs"
+
+run_installers() {
+  # config/ modules with install.sh files
+  local files=($CONFIG_DIR/*/install.sh)
+  for file in "${files[@]}"; do
+    info "Setting up $(basename $(dirname $file))..."
+    sh -c "$file"
+  done
+}
+
+run_installers
+
+# --- Submodules init
+
+# Grab all submodules before moving on
+info "Initializing submodules..."
+git config --global url."https://github.com/".insteadOf git://github.com/
+git submodule update --init --recursive
+
+# --- .dotfiles setup
 
 link_file () {
   local src=$1 dst=$2
@@ -79,7 +122,7 @@ link_file () {
     fi
 
     if [ "$skip" == "true" ]; then
-      success "skipped $src"
+      success "skipped $src (already linked)"
     fi
   fi
 
@@ -92,20 +135,18 @@ link_file () {
 install_dotfiles () {
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*'); do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
+  local files=($CONFIG_DIR/*/*.symlink)
+  for file in "${files[@]}"; do
+    dst="$HOME/.$(basename "${file%.*}")"
+    link_file "$file" "$dst"
   done
 }
 
-# Grab all submodules before moving on
-info "Initializing submodules..."
-git config --global url."https://github.com/".insteadOf git://github.com/
-git submodule update --init --recursive
-
-# Install the dot files
 info "Installing dotfiles..."
 install_dotfiles
 
-echo ""
-echo "Done!"
+# Default to zsh instead of bash; requires desktop logout/login.
+info "Updating default shell (chsh -s zsh)..."
+chsh -s $(which zsh)
+
+success "All done!"
