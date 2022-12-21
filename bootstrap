@@ -147,6 +147,16 @@ install_dotfiles
 
 # Default to zsh instead of bash; requires desktop logout/login.
 info "Updating default shell (chsh -s zsh)..."
-chsh -s $(which zsh)
+
+# chsh in macOS complains if the shell is not defined in /etc/shells
+if [[ "$OSTYPE" == darwin* ]]; then
+  zsh=$(which zsh)
+  # Add it if isn't already there
+  if ! grep -q "$zsh" "/etc/shells"; then
+    info "Adding $zsh to /etc/shells"
+    echo "$zsh" | sudo tee -a "/etc/shells"
+  fi
+fi
+chsh -s $zsh
 
 success "All done!"
