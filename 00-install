@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
 # Run all dotfiles installers.
-set -e
 cd "$(dirname $0)"
 
 # ---
@@ -36,9 +35,9 @@ CONFIG_DIR="$(cd "$(dirname "$0")" && pwd -P)/configs"
 
 run_installers() {
   # config/ modules with install.sh files
-  local file=($CONFIG_DIR/*/install.sh)
-  for file in ${files}; do
-    echo "  - $file"
+  local files=($CONFIG_DIR/*/install.sh)
+  for file in "${files[@]}"; do
+    echo "> Setting up $(basename $(dirname $file))..."
     sh -c "$file"
   done
 }
