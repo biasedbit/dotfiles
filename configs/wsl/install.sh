@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+source includes.sh
+
 if [[ ! $(grep -s microsoft /proc/version) ]]; then
   success "Not running in WSL, skipped."
   exit
@@ -8,11 +10,9 @@ fi
 
 conf="/etc/wsl.conf"
 if [ -f "$conf" -o -L "$conf" ]; then
-  echo "/etc/wsl.conf exists; contents:"
-  echo "---"
+  user "/etc/wsl.conf exists; contents:"
   echo "$(cat /etc/wsl.conf)"
-  echo "---"
-  printf "overwrite? [y/N]: "
+  user "overwrite? [y/N]: "
   read -n 1 input
   echo ""
 
