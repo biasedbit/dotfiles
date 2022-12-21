@@ -35,22 +35,11 @@ esac
 CONFIG_DIR="$(cd "$(dirname "$0")" && pwd -P)/configs"
 
 run_installers() {
-  local modules=  # list of modules to run installers from; order matters
-  case "$OSTYPE" in
-    darwin*)
-      modules='ruby'
-      ;;
-    "linux-gnu")
-      modules='ruby'
-      ;;
-    *)
-      echo "! Unsupported OS ($OSTYPE); skipping module installation."
-      ;;
-  esac
-
-  for module in ${modules}; do
-    echo "  - $module/install.sh"
-    sh -c "$CONFIG_DIR/$module/install.sh"
+  # config/ modules with install.sh files
+  local file=($CONFIG_DIR/*/install.sh)
+  for file in ${files}; do
+    echo "  - $file"
+    sh -c "$file"
   done
 }
 
