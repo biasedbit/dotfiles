@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-if [[ ! $(grep microsoft /proc/version) ]]; then exit; fi
+if [[ ! $(grep -s microsoft /proc/version) ]]; then
+  success "Not running in WSL, skipped."
+  exit
+fi
 
 conf="/etc/wsl.conf"
 if [ -f "$conf" -o -L "$conf" ]; then
