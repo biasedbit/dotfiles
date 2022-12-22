@@ -10,3 +10,6 @@
 [submodule "oh-my-zsh-custom/plugins/autoenv"]
 	path = oh-my-zsh-custom/plugins/autoenv
 	url = ../../horosgrisa/autoenv.git
+[submodule "oh-my-zsh-custom/themes/powerlevel10k"]
+	path = oh-my-zsh-custom/themes/powerlevel10k
+	url = ../../romkatv/powerlevel10k.git
