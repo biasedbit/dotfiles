@@ -19,6 +19,8 @@ case "$OSTYPE" in
     if [[ $(grep microsoft /proc/version) ]]; then
       # Full path since wsl.conf will normally have appendWindowsPath = false
       clipboard_cmd="/mnt/c/Windows/System32/clip.exe"
+      # Emulate macos's `open <path>`
+      function open() { /mnt/c/Windows/explorer.exe `wslpath -w $1`; }
     else
       clipboard_cmd="xsel -ib"
     fi
