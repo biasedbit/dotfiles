@@ -21,6 +21,7 @@ sudo apt install -y \
   rbenv \
   golang \
   openjdk-18-jdk \
+  jenv \
   gradle
 
 # Add extra repos
