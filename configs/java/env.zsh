@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+# In linux, jenv is installed by cloning repo to ~/.jenv
+if [[ "$OSTYPE" != "gnu-linux" ]]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+fi
+
 # `jenv init -`, minus completions
 export PATH="$HOME/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
@@ -23,8 +28,6 @@ jenv() {
     command jenv "$command" "$@";;
   esac
 }
-
-jenv global 19.0
 
 # case "$OSTYPE" in
 #   darwin*)

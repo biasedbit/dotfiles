@@ -20,8 +20,7 @@ sudo apt install -y \
   lsb-release \
   rbenv \
   golang \
-  openjdk-18-jdk \
-  jenv \
+  openjdk-19-jdk \
   gradle
 
 # Add extra repos
