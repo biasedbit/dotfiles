@@ -27,10 +27,3 @@ case "$OSTYPE" in
 esac
 
 alias cbcopy=$clipboard_cmd
-
-# gitgrep w/ breaks
-alias gg="git grep --break --heading --line-number"
-
-# copy current git branch name to clipboard
-alias gbcp="git rev-parse --abbrev-ref HEAD | tr -d '\n' | cbcopy"
-alias gpom="git pull origin main"
