@@ -31,5 +31,5 @@ cask 'spotify'
 cask 'google-drive'
 cask 'visual-studio-code'
 
-brew 'svn' # required for font below
-cask 'font-source-code-pro'
+cask 'font-sauce-code-pro-nerd-font'
+cask 'font-meslo-lg-nerd-font'
