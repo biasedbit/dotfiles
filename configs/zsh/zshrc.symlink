@@ -19,6 +19,8 @@ HOMEBREW_NO_ANALYTICS=1
 plugins=(
   # Adds b(ase)64/d(ecode)64 commands
   'encode64'
+  # Expand aliases
+  'globalias'
   # Run ./gradlew if available, otherwise run sys gradle
   'gradle'
   # Autoload .env files when entering/exiting directories
