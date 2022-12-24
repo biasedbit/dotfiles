@@ -9,12 +9,10 @@ alias dud='du -d 1 -h'
 
 case "$OSTYPE" in
   darwin*)
-    alias ls="ls -Gh"
     alias update="brew update && brew upgrade"
     clipboard_cmd="pbcopy"
     ;;
   "linux-gnu")
-    alias ls="ls -Gh --color --group-directories-first -X"
     alias update="sudo apt update && sudo apt upgrade"
     if [[ $(grep microsoft /proc/version) ]]; then
       # Full path since wsl.conf will normally have appendWindowsPath = false

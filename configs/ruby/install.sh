@@ -26,3 +26,4 @@ rbenv rehash
 eval "$(rbenv init -)"
 gem update --system
 gem install bundler
+gem install colorls
