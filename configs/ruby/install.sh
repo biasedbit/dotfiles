@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-VERSION="3.1.2"
 set -e
+
 case "$OSTYPE" in
   darwin*)
     ;;
@@ -15,7 +15,11 @@ case "$OSTYPE" in
     ;;
 esac
 
-rbenv install $VERSION
+VERSION="3.1.3"
+# Temporary flags to work around failing builds on m1
+# https://github.com/rbenv/ruby-build/discussions/1961#discussioncomment-4031745
+RUBY_CONFIGURE_OPTS="--disable-install-doc --disable-shared --with-openssl-dir=$(brew --prefix openssl@3)"\
+  rbenv install $VERSION
 rbenv global $VERSION
 rbenv rehash
 
