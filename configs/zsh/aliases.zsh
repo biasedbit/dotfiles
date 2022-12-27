@@ -2,8 +2,9 @@
 
 # Reload shell
 alias reload!='exec zsh'
-# SafetyThird™
+# SafetyThird™ + exclude from globalias expansion
 alias rm='rm -I'
+GLOBALIAS_FILTER_VALUES+=(rm)
 # Disk usage of items in current dir
 alias dud='du -d 1 -h'
 
@@ -26,4 +27,6 @@ case "$OSTYPE" in
   *)
 esac
 
+# Add stdin to clipboard + exclude from globalias expansion
 alias cbcopy=$clipboard_cmd
+GLOBALIAS_FILTER_VALUES+=(cbcopy)
