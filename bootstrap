@@ -125,13 +125,9 @@ install_dotfiles () {
     link_file "$file" "$dst"
   done
 
-  # This project's convention is to keep all machine-specific configuration
-  # in ~/.localrc. Some programs edit .zprofile (not managed by this project
-  # and not really relevant for any computer I'd use this .dotfiles repo in),
-  # which would result in 2 possible files for machine-specific config.
-  # To avoid that and keep things consistent,link .zprofile to .localrc
-  touch $HOME/.localrc
-  link_file $HOME/.localrc $HOME/.zprofile
+  if [ ! -f "$HOME/.localrc" ]; then
+    echo "# Machine-specific setup (credentials, etc.)" > $HOME/.localrc
+  fi
 }
 
 info "Installing dotfiles..."
