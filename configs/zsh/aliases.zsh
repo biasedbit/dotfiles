@@ -22,3 +22,6 @@ case "$OSTYPE" in
   *)
 esac
 
+# omz creates an alias for grep that excludes vcs folders; don't expand.
+# see oh-my-zsh/lib/grep.zsh
+GLOBALIAS_FILTER_VALUES+=(grep)
