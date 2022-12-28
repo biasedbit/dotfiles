@@ -17,6 +17,8 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='red'
 HOMEBREW_NO_ANALYTICS=1
 
 plugins=(
+  # Init homebrew/linuxbrew env
+  'brew'
   # Adds b(ase)64/d(ecode)64 commands
   'encode64'
   # Expand aliases
