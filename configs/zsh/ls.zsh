@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# list w/ colorls
+# list w/ colorls instead of system ls
 unalias ls # in case some plugin creates a conflicting alias
 ls() {
   local opts=(--sd)
