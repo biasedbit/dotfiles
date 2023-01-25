@@ -21,7 +21,7 @@
 
 function prompt_hermit() {
   if [[ -n $HERMIT_ENV ]]; then
-    p10k segment -i 🐚 -t "${${HERMIT_ENV:t}//\%/%%}" -f green
+    p10k segment -i 🐚 -t "" -f green
   fi
 }
 
@@ -56,7 +56,6 @@ function prompt_hermit() {
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
-    hermit
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
@@ -112,6 +111,7 @@ function prompt_hermit() {
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     # cpu_arch              # CPU architecture
     # time                  # current time
+    hermit
     # =========================[ Line #2 ]=========================
     newline
     # ip                    # ip address and bandwidth usage for a specified network interface
