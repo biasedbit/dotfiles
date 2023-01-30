@@ -3,11 +3,8 @@
 # list w/ colorls instead of system ls
 unalias ls # in case some plugin creates a conflicting alias
 ls() {
-  local opts=(--sd)
-  if [[ $@ == *a* ]]; then opts+=(-A) fi
-  if [[ $@ == *l* ]]; then opts+=(-l) fi
-
-  command colorls ${=opts} --time-style='+ %Y-%m-%d %H:%M:%S'
+  # Replace '-la' arg with -lA (default for 'la' alias; hides ./ and ../)
+  command colorls --sd --time-style='+ %Y-%m-%d %H:%M:%S' ${@//-la/-lA}
 }
 
 # Should the real ls becomes necessary...
