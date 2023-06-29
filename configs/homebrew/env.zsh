@@ -7,7 +7,8 @@ function nuke_homebrew() {
   # Switch back to bash to avoid new sessions breaking due to
   # missing zsh (deleted in the purge process below)
   chsh -s /bin/bash
-  rm -rf ~/Library/Caches/Homebrew
   /opt/homebrew/bin/brew remove --cask --force $(/opt/homebrew/bin/brew list)
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+  rm -rf ~/Library/Caches/Homebrew
+  sudo rm -rf /opt/homebrew/
 }
