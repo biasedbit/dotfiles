@@ -21,7 +21,7 @@ sudo apt update && sudo apt install -y \
 # Languages & support tooling not managed by hermit
 sudo apt install -y \
   rbenv \
-  openjdk-19-jdk
+  openjdk-20-jdk
 
 # Add extra repos for docker & sublime
 # docker: https://docs.docker.com/engine/install/ubuntu/

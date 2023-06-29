@@ -17,7 +17,7 @@ brew 'jq'
 # Languages & support tooling not managed by hermit
 brew 'rbenv'
 brew 'ruby-build'
-brew 'openjdk@19'
+brew 'openjdk@20'
 brew 'jenv'
 
 # Other dev tools
