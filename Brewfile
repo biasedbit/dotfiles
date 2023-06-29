@@ -20,9 +20,6 @@ brew 'ruby-build'
 brew 'openjdk@20'
 brew 'jenv'
 
-# Other dev tools
-brew 'docker'
-
 # Apps
 cask_args appdir: '/Applications'
 cask 'iterm2'
@@ -31,6 +28,7 @@ cask 'spotify'
 cask 'google-drive'
 cask 'sublime-text'
 cask 'visual-studio-code'
+cask 'docker'
 
 # Fonts
 tap 'homebrew/cask-fonts'
