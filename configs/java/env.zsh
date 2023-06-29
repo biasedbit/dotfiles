@@ -7,7 +7,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export PATH="$HOME/.jenv/bin:$PATH"
 fi
 
-jenv global 19.0
+jenv global 20.0
 
 # case "$OSTYPE" in
 #   darwin*)
