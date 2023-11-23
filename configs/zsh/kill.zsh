@@ -18,5 +18,5 @@ killmatch() {
     search_term="$1"
   fi
 
-  ps -eo pid,cmd | grep "$search_term" | awk '{print $1}' | xargs kill $signal > /dev/null 2>&1
+  ps -eo pid,command | grep "$search_term" | awk '{print $1}' | xargs kill $signal > /dev/null 2>&1
 }
