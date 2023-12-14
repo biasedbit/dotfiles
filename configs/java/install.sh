@@ -14,5 +14,6 @@ else
 fi
 
 mkdir -p $HOME/.jenv/versions
-# Add JDK installed in Aptfile (openjdk-20-jdk) to managed java versions
-$HOME/.jenv/bin/jenv add /usr/lib/jvm/java-20-openjdk-amd64/
+# Add JDK installed in Aptfile (openjdk-21-jdk) to managed java versions
+$HOME/.jenv/bin/jenv add /usr/lib/jvm/java-21-openjdk-amd64/
+
