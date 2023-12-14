@@ -9,6 +9,17 @@ if [[ ! $(grep -s microsoft /proc/version) ]]; then
 fi
 
 conf="/etc/wsl.conf"
+
+# default wsl.conf
+# - use systemd to manage linux services
+# - don't append windows paths to $PATH (makes lookups really slow)
+wsl_conf="[boot]
+systemd=true
+
+[interop]
+appendWindowsPath = false
+"
+
 if [ -f "$conf" -o -L "$conf" ]; then
   user "/etc/wsl.conf exists; contents:"
   echo "$(cat /etc/wsl.conf)"
@@ -18,7 +29,7 @@ if [ -f "$conf" -o -L "$conf" ]; then
 
   case "$input" in
     y | Y )
-      echo -e "[interop]\nappendWindowsPath = false\n" | sudo tee /etc/wsl.conf > /dev/null
+      echo -e "$wsl_conf" | sudo tee /etc/wsl.conf > /dev/null
       ;;
     n | N)
       ;;
