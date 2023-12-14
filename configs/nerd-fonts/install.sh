@@ -13,8 +13,17 @@ cd $HOME/.nerd-fonts
 git sparse-checkout add patched-fonts/Meslo
 git sparse-checkout add patched-fonts/SourceCodePro
 
-./install.sh -l Meslo
-./install.sh -l SourceCodePro
+if [[ $(grep -s microsoft /proc/version) ]]; then
+  # On WSL, copy the fonts to make it easier to manually install below, as
+  # explorer.exe doesn't understand symlinks (considers font files invalid).
+  opts="--copy"
+else
+  # On Ubuntu native, it's sufficient to symlink (and save some space)
+  opts="--link"
+fi
+
+./install.sh $opts Meslo
+./install.sh $opts SourceCodePro
 
 # In WSL we actually want the fonts installed in Windows, but automating
 # that requires messing with the Registry (ew). Bootstrap is rare and manual
