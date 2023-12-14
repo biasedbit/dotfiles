@@ -6,7 +6,7 @@ if [[ "$OSTYPE" == darwin* ]]; then exit; fi
 
 if [ ! -d "$HOME/.nerd-fonts" ] ; then
   git clone --filter=blob:none --sparse\
-    git@github.com:ryanoasis/nerd-fonts $HOME/.nerd-fonts
+    https://github.com/ryanoasis/nerd-fonts.git $HOME/.nerd-fonts
 fi
 
 cd $HOME/.nerd-fonts
@@ -18,7 +18,7 @@ git sparse-checkout add patched-fonts/SourceCodePro
 
 # In WSL we actually want the fonts installed in Windows, but automating
 # that requires messing with the Registry (ew). Bootstrap is rare and manual
-# install is trivial so just open Exporer on folder with all fonts.
+# install is trivial so just open Explorer on folder with all fonts.
 if [[ $(grep -s microsoft /proc/version) ]]; then
   /mnt/c/Windows/explorer.exe `wslpath -w $HOME/.local/share/fonts/NerdFonts`
 fi
