@@ -13,7 +13,6 @@ brew 'ffmpeg'
 brew 'htop'
 brew 'fzf'
 brew 'jq'
-brew 'colima'
 
 # Languages & support tooling not managed by hermit
 brew 'rbenv'
@@ -30,6 +29,7 @@ cask 'google-drive'
 cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'tailscale'
+cask 'docker'
 
 # Fonts
 tap 'homebrew/cask-fonts'
