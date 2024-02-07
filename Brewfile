@@ -29,6 +29,7 @@ cask 'google-drive'
 cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'docker'
+cask 'tailscale'
 
 # Fonts
 tap 'homebrew/cask-fonts'
