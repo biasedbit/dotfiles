@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 if [[ "$OSTYPE" != darwin* ]]; then exit; fi
 
 # Reduce spacing/padding size between menubar icons

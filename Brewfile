@@ -19,6 +19,7 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'openjdk@21' # Update .config/java/install.sh and .config/java/env.zsh to match
 brew 'jenv'
+brew 'rustup-init'
 
 # Apps
 cask_args appdir: '/Applications'
