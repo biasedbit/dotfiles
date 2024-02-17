@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-# TODO: rustup installation in Ubuntu
-if [[ "$OSTYPE" != darwin* ]]; then exit; fi
-
-rustup-init -y\
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
 	--no-modify-path \
 	--default-toolchain stable \
-	--profile default \
+	--profile default
