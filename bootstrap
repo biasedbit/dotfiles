@@ -5,6 +5,8 @@ cd "$(dirname $0)"
 
 source "includes.sh"
 
+CONFIG_DIR="$(cd "$(dirname "$0")" && pwd -P)/configs"
+
 # --- OS setup
 
 case "$OSTYPE" in
@@ -32,27 +34,6 @@ case "$OSTYPE" in
     ;;
 esac
 
-# --- Install modules
-
-CONFIG_DIR="$(cd "$(dirname "$0")" && pwd -P)/configs"
-
-run_installers() {
-  # config/ modules with install.sh files
-  local files=($CONFIG_DIR/*/install.sh)
-  for file in "${files[@]}"; do
-    info "Setting up $(basename $(dirname $file))..."
-    sh -c "$file"
-  done
-}
-
-run_installers
-
-# --- Submodules init
-
-# Grab all submodules before moving on
-info "Initializing submodules..."
-git config --global url."https://github.com/".insteadOf git://github.com/
-git submodule update --init --recursive
 
 # --- .dotfiles setup
 
@@ -133,6 +114,26 @@ install_dotfiles () {
 
 info "Installing dotfiles..."
 install_dotfiles
+
+# --- Install modules
+
+run_installers() {
+  # config/ modules with install.sh files
+  local files=($CONFIG_DIR/*/install.sh)
+  for file in "${files[@]}"; do
+    info "Setting up $(basename $(dirname $file))..."
+    sh -c "$file"
+  done
+}
+
+run_installers
+
+# --- Submodules init
+
+# Grab all submodules before moving on
+info "Initializing submodules..."
+git config --global url."https://github.com/".insteadOf git://github.com/
+git submodule update --init --recursive
 
 # Default to zsh instead of bash; requires desktop logout/login.
 info "Updating default shell (chsh -s zsh)..."
