@@ -3,20 +3,24 @@ set -e
 
 # CLI basics
 sudo apt update && sudo apt install -y \
-  zsh \
-  vim \
-  git \
-  fzf \
-  xsel \
-  curl \
-  imagemagick \
-  ffmpeg \
-  htop \
   autoconf \
-  libssl-dev \
   ca-certificates \
+  curl \
+  ffmpeg \
+  fzf \
+  git \
   gnupg \
-  lsb-release
+  htop \
+  imagemagick \
+  libbz2-dev \
+  liblzma-dev \
+  libreadline-dev \
+  libssl-dev \
+  libyaml-dev \
+  lsb-release \
+  vim \
+  xsel \
+  zsh
 
 # Add extra repos for docker & sublime
 # docker: https://docs.docker.com/engine/install/ubuntu/
