@@ -14,12 +14,6 @@ brew 'htop'
 brew 'fzf'
 brew 'jq'
 
-# Languages & support tooling not managed by hermit
-brew 'rbenv'
-brew 'ruby-build'
-brew 'openjdk@21' # Update .config/java/install.sh and .config/java/env.zsh to match
-brew 'jenv'
-
 # Apps
 cask_args appdir: '/Applications'
 cask 'iterm2'

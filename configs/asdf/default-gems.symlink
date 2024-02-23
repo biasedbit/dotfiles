@@ -1,0 +1,6 @@
+# asdf-ruby configuration file
+# https://github.com/asdf-vm/asdf-ruby?tab=readme-ov-file#default-gems
+
+bundler
+# Fancy ls; see ../zsh/ls.zsh
+colorls

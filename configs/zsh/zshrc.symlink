@@ -45,8 +45,7 @@ plugins=(
   'colored-man-pages'
   # dockercompose aliases; mostly for dcupb/dcstop
   'docker-compose'
-  'rbenv'
-  'jenv'
+  'asdf'
 )
 
 source $ZSH/oh-my-zsh.sh
