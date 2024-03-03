@@ -1,5 +1,5 @@
-pnpm 8.15.3
-ruby 3.2.3
+pnpm 8.15.4
+ruby 3.3.0
 python 3.12.2
 java openjdk-21
 golang 1.22.0
