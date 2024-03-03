@@ -11,4 +11,5 @@ asdf plugin add python || true
 asdf plugin add poetry || true
 asdf plugin add ruby || true
 asdf plugin add java || true
+asdf plugin add golang || true
 asdf install

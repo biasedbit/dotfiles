@@ -2,3 +2,4 @@ pnpm 8.15.3
 ruby 3.2.3
 python 3.12.2
 java openjdk-21
+golang 1.22.0
