@@ -1,7 +1,7 @@
 .DS_Store
 *~
 *.swp
-.env
+.env.local
 .out
 .gradletasknamecache
 .idea
