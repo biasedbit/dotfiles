@@ -13,6 +13,7 @@ brew 'ffmpeg'
 brew 'htop'
 brew 'fzf'
 brew 'jq'
+brew 'bat'
 
 # Apps
 cask_args appdir: '/Applications'

@@ -4,6 +4,7 @@ set -e
 # CLI basics
 sudo apt update && sudo apt install -y \
   autoconf \
+  bat \
   ca-certificates \
   curl \
   ffmpeg \
@@ -21,6 +22,10 @@ sudo apt update && sudo apt install -y \
   vim \
   xsel \
   zsh
+
+# Bat gets installed as 'batcat'; alias it to 'bat'
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # Add extra repos for docker & sublime
 # docker: https://docs.docker.com/engine/install/ubuntu/
