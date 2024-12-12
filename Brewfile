@@ -14,6 +14,7 @@ brew 'htop'
 brew 'fzf'
 brew 'jq'
 brew 'bat'
+brew 'diff-so-fancy'
 
 # Apps
 cask_args appdir: '/Applications'
