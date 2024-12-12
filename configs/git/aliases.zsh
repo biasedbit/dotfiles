@@ -8,3 +8,4 @@ alias gg="git grep --break --heading --line-number"
 # copy current git branch name to clipboard
 alias gbcp="git rev-parse --abbrev-ref HEAD | tr -d '\n' | clipcopy"
 alias gpom="git pull origin main"
+alias gpod="git pull origin develop"
