@@ -28,6 +28,5 @@ cask 'tailscale'
 cask 'docker'
 
 # Fonts
-tap 'homebrew/cask-fonts'
 cask 'font-sauce-code-pro-nerd-font'
 cask 'font-meslo-lg-nerd-font'
