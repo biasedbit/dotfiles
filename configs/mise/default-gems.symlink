@@ -1,0 +1,5 @@
+# https://mise.jdx.dev/lang/ruby.html#default-gems
+
+bundler
+# Fancy ls; see ../zsh/ls.zsh
+colorls
