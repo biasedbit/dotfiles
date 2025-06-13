@@ -1,6 +1,3 @@
-# Setup
-tap 'homebrew/bundle'
-
 # For omz plugin command-not-found
 tap 'homebrew/command-not-found'
 
@@ -21,7 +18,6 @@ brew 'diff-so-fancy'
 cask_args appdir: '/Applications'
 cask 'iterm2'
 cask 'fork'
-cask 'spotify'
 cask 'google-drive'
 cask 'sublime-text'
 cask 'visual-studio-code'
