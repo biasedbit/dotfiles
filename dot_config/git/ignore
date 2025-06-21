@@ -1,0 +1,4 @@
+# Keep macos cruft out of repos
+.DS_Store
+# Never track local files prefixed with `gitignore.` (scratchpads)
+gitignore.*

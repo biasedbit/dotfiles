@@ -1,0 +1,10 @@
+[tools]
+  bat = "latest"
+  fzf = "latest"
+  jq = "latest"
+  ripgrep = "latest"
+  neovim = "latest"
+  ruby = "3.4"
+
+[settings]
+  ruby.default_packages_file = "~/.config/mise/default-gems"

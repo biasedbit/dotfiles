@@ -1,0 +1,35 @@
+[user]
+  name = {{ .name }}
+  email = {{ .email }}
+[color]
+  ui = true # Enable color in git status, diff, etc.
+[core]
+  editor = nvim
+[alias]
+  co = checkout
+  count = !git shortlog -sn
+  undo = reset --soft HEAD^
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  nuke = !git add . && git reset --hard HEAD
+[init]
+	defaultBranch = main
+[branch]
+  # Track remote branch on first push.
+  autoSetupMerge = always
+[push]
+  # When no branch is specified, only push the current branch to upstream.
+  default = upstream
+  autoSetupRemote = true
+[checkout]
+  defaultRemote = origin
+[grep]
+  lineNumber = true
+# Always use SSH instead of HTTPS
+[url "https://github.com/"]
+  insteadOf = git://github.com/
+
+{{- if eq .chezmoi.os "darwin" }}
+[credential]
+  helper = osxkeychain
+{{- end }}

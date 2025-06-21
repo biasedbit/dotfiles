@@ -1,20 +1,14 @@
-# For omz plugin command-not-found
-tap 'homebrew/command-not-found'
+# --- CLI/system tools
 
-# CLI basics
+# Reinstall system tools with brew, in order to get recent versions.
 brew 'zsh'
 brew 'vim'
 brew 'git'
+brew 'tmux'
+# Handle the rest of the tools/runtimes with mise.
 brew 'mise'
-brew 'imagemagick'
-brew 'ffmpeg'
-brew 'htop'
-brew 'fzf'
-brew 'jq'
-brew 'bat'
-brew 'diff-so-fancy'
 
-# Apps
+# --- Apps
 cask_args appdir: '/Applications'
 cask 'iterm2'
 cask 'fork'
@@ -24,6 +18,7 @@ cask 'visual-studio-code'
 cask 'tailscale'
 cask 'docker'
 
-# Fonts
+# --- Fonts
 cask 'font-sauce-code-pro-nerd-font'
-cask 'font-meslo-lg-nerd-font'
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-mononoki-nerd-font'

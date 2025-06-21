@@ -1,0 +1,8 @@
+# Files that should't be managed by chezmoi.
+# NB: These are their post-transform names.
+
+# Ignore everything (typically only dotfiles should be managed-by-default)
+*
+
+# Manage dotfiles and dotfolders
+!.*

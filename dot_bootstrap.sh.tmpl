@@ -1,0 +1,52 @@
+#!/bin/sh
+set -e
+
+# Script to initialize a new dev environment.
+# Env pre-requisites: sh, curl
+
+{{- if eq .chezmoi.os "darwin" }}
+# No thanks, brew.
+HOMEBREW_NO_ANALYTICS=1
+{{- end }}
+
+# Install starship for pretty prompt.
+curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+
+# Install common tools with mise.
+mise install
+
+target_shell="`which zsh`"
+
+{{- if eq .chezmoi.os "darwin" }}
+# On macos use homebrew's zsh.
+target_shell="/opt/homebrew/bin/zsh"
+
+# Install homebrew and all the packages in Brewfile.
+# (in non-interactive mode to skip user confirmations)
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle install --file $HOME/.local/share/chezmoi/Brewfile || true
+
+# chsh fails if target shell is not in /etc/shells; put it there (if not already)
+if ! grep -q "$target_shell" /etc/shells; then
+  echo "$target_shell" | sudo tee -a /etc/shells >/dev/null
+fi
+{{- end }}
+
+# --- zsh setup
+
+# If target shell isn't already the default, make it so.
+if [ "$SHELL" != "$target_shell" ]; then
+  # Use `chsh` if available, fallback to `usermod` if not.
+  if command -v chsh >/dev/null 2>&1; then
+    chsh -s "$target_shell"
+  else
+    sudo usermod -s "$target_shell" "$USER"
+  fi
+fi
+
+# Switch to target shell for current session if not already running it.
+if [ "`ps -p $$ -o comm=`" != "zsh" ]; then
+  exec "$target_shell"
+fi
+
+echo "🎉 Bootstrapped!"

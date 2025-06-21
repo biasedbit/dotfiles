@@ -1,0 +1,13 @@
+# Delete dotfiles for tools that support xdg – keep $HOME clean.
+.gitconfig
+# Get rid of bash files – this is a zsh house!
+.bash*
+.profile
+# These dotfiles are for bootstrapping dev machines (no non-interactive shells).
+.zprofile
+.zshenv
+# Cleanup any zsh files in obsolete locations (these should live in xdg paths).
+.zcompdump
+.zsh_history
+# Delete cruft created by that garbage Terminal.app
+.zsh_sessions

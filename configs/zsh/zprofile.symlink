@@ -1,6 +1,0 @@
-# Nothing to see here; used for login (i.e. non-interactive) shells
-#
-# Some programs edit .zprofile, which is not really relevant for dev laptops
-# (i.e. where this .dotfiles project is used). Symlinking .zprofile to a
-# versioned file helps keep track of any unexpected changes (that should
-# probably go in ~/.localrc)
