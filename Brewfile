@@ -21,4 +21,3 @@ cask 'docker'
 # --- Fonts
 cask 'font-sauce-code-pro-nerd-font'
 cask 'font-jetbrains-mono-nerd-font'
-cask 'font-mononoki-nerd-font'
