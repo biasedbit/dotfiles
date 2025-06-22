@@ -7,10 +7,16 @@
   editor = nvim
 [alias]
   co = checkout
+  # Count commits by author (descending order)
   count = !git shortlog -sn
+  # Undo the last commit, keeping changes in the working tree.
   undo = reset --soft HEAD^
+  # Opposite of git add; remove files from staging area, keeping changes.
+  # Can be used with or without arguments, e.g.:
+  #   - `git unstage`: unstages everything
+  #   - `git unstage foo bar`: unstages foo.txt and bar.txt
   unstage = reset HEAD --
-  last = log -1 HEAD
+  # Wipe everything out, resetting working tree to last commit.
   nuke = !git add . && git reset --hard HEAD
 [init]
 	defaultBranch = main
