@@ -101,7 +101,8 @@ function success() {
 {{- if eq .chezmoi.os "darwin" }}
 # MARK: macos
 
-alias update="brew update && brew upgrade && mise up && cm upgrade"
+local os_update_cmd="brew update && brew upgrade"
+local os_cleanup_cmd="brew cleanup && brew autoremove"
 
 function nuke_homebrew() {
   # Switch back to bash to avoid new sessions breaking due to
@@ -113,3 +114,17 @@ function nuke_homebrew() {
   sudo rm -rf /opt/homebrew/
 }
 {{- end }}
+
+function update() {
+  [[ -n "$os_update_cmd" ]] && eval "$os_update_cmd"
+  gem update --system && \
+    gem update && \
+    mise up && \
+    cm upgrade
+}
+
+function cleanup() {
+  [[ -n "$os_cleanup_cmd" ]] && eval "$os_cleanup_cmd"
+  gem cleanup && \
+    mise prune -y
+}

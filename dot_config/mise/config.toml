@@ -4,7 +4,7 @@
   jq = "latest"
   ripgrep = "latest"
   neovim = "latest"
-  ruby = "3.4"
+  ruby = "3.4"       # global ruby required for custom ls (in utils.zsh partial)
 
 [settings]
   ruby.default_packages_file = "~/.config/mise/default-gems"
