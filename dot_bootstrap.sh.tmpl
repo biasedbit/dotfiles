@@ -12,9 +12,6 @@ HOMEBREW_NO_ANALYTICS=1
 # Install starship for pretty prompt.
 curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
-# Install common tools with mise.
-mise install
-
 target_shell="`which zsh`"
 
 {{- if eq .chezmoi.os "darwin" }}
@@ -43,6 +40,9 @@ if [ "$SHELL" != "$target_shell" ]; then
     sudo usermod -s "$target_shell" "$USER"
   fi
 fi
+
+# NB: Must run after host-specific setup to ensure system deps are installed.
+mise install
 
 # Switch to target shell for current session if not already running it.
 if [ "`ps -p $$ -o comm=`" != "zsh" ]; then
