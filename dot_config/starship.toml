@@ -1,250 +1,190 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-[git_commit]
-  tag_symbol = " tag "
-
 [aws]
-  symbol = "aws "
-
-[azure]
-  symbol = "az "
+  symbol = "  "
+  format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
 [buf]
-  symbol = "buf "
+  symbol = " "
 
 [bun]
-  symbol = "bun "
+  symbol = " "
 
 [c]
-  symbol = "C "
+  symbol = " "
+  format = '\[[$symbol($version(-$name))]($style)\]'
 
 [cpp]
-  symbol = "C++ "
-
-[cobol]
-  symbol = "cobol "
-
-[conda]
-  symbol = "conda "
-
-[container]
-  symbol = "container "
-
-[crystal]
-  symbol = "cr "
+  symbol = " "
+  format = '\[[$symbol($version(-$name))]($style)\]'
 
 [cmake]
-  symbol = "cmake "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
-[daml]
-  symbol = "daml "
+[cmd_duration]
+  format = '\[[⏱ $duration]($style)\]'
 
 [dart]
-  symbol = "dart "
-
-[deno]
-  symbol = "deno "
-
-[dotnet]
-  symbol = ".NET "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
 [directory]
-  read_only = " ro"
+  read_only = " 󰌾"
 
 [docker_context]
-  symbol = "docker "
-
-[elixir]
-  symbol = "exs "
-
-[elm]
-  symbol = "elm "
-
-[fennel]
-  symbol = "fnl "
-
-[fossil_branch]
-  symbol = "fossil "
-
-[gcloud]
-  symbol = "gcp "
+  symbol = " "
+  format = '\[[$symbol$context]($style)\]'
 
 [git_branch]
-  symbol = "git "
+  symbol = " "
+  format = '\[[$symbol$branch]($style)\]'
 
-[gleam]
-  symbol = "gleam "
+[git_status]
+  format = '([\[$all_status$ahead_behind\]]($style))'
+
+[git_commit]
+  tag_symbol = '  '
 
 [golang]
-  symbol = "go "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
 [gradle]
-  symbol = "gradle "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
-[guix_shell]
-  symbol = "guix "
-
-[haskell]
-  symbol = "haskell "
-
-[helm]
-  symbol = "helm "
-
-[hg_branch]
-  symbol = "hg "
+[hostname]
+  ssh_symbol = " "
 
 [java]
-  symbol = "java "
-
-[julia]
-  symbol = "jl "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
 [kotlin]
-  symbol = "kt "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
+
+[kubernetes]
+  format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
 [lua]
-  symbol = "lua "
-
-[nodejs]
-  symbol = "nodejs "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
 [memory_usage]
-  symbol = "memory "
+  symbol = "󰍛 "
+  format = '\[$symbol[$ram( | $swap)]($style)\]'
 
 [meson]
-  symbol = "meson "
-
-[nats]
-  symbol = "nats "
+  symbol = "󰔷 "
 
 [nim]
-  symbol = "nim "
+  symbol = "󰆥 "
 
 [nix_shell]
-  symbol = "nix "
+  symbol = " "
+  format = '\[[$symbol$state( \($name\))]($style)\]'
 
-[ocaml]
-  symbol = "ml "
+[nodejs]
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
-[opa]
-  symbol = "opa "
+[os]
+  format = '\[[$symbol]($style)\]'
 
-[os.symbols]
-  AIX = "aix "
-  Alpaquita = "alq "
-  AlmaLinux = "alma "
-  Alpine = "alp "
-  Amazon = "amz "
-  Android = "andr "
-  Arch = "rch "
-  Artix = "atx "
-  Bluefin = "blfn "
-  CachyOS = "cach "
-  CentOS = "cent "
-  Debian = "deb "
-  DragonFly = "dfbsd "
-  Emscripten = "emsc "
-  EndeavourOS = "ndev "
-  Fedora = "fed "
-  FreeBSD = "fbsd "
-  Garuda = "garu "
-  Gentoo = "gent "
-  HardenedBSD = "hbsd "
-  Illumos = "lum "
-  Kali = "kali "
-  Linux = "lnx "
-  Mabox = "mbox "
-  Macos = "mac "
-  Manjaro = "mjo "
-  Mariner = "mrn "
-  MidnightBSD = "mid "
-  Mint = "mint "
-  NetBSD = "nbsd "
-  NixOS = "nix "
-  Nobara = "nbra "
-  OpenBSD = "obsd "
-  OpenCloudOS = "ocos "
-  openEuler = "oeul "
-  openSUSE = "osuse "
-  OracleLinux = "orac "
-  Pop = "pop "
-  Raspbian = "rasp "
-  Redhat = "rhl "
-  RedHatEnterprise = "rhel "
-  RockyLinux = "rky "
-  Redox = "redox "
-  Solus = "sol "
-  SUSE = "suse "
-  Ubuntu = "ubnt "
-  Ultramarine = "ultm "
-  Unknown = "unk "
-  Uos = "uos "
-  Void = "void "
-  Windows = "win "
+  [os.symbols]
+    Alpaquita = " "
+    Alpine = " "
+    AlmaLinux = " "
+    Amazon = " "
+    Android = " "
+    Arch = " "
+    Artix = " "
+    CachyOS = " "
+    CentOS = " "
+    Debian = " "
+    DragonFly = " "
+    Emscripten = " "
+    EndeavourOS = " "
+    Fedora = " "
+    FreeBSD = " "
+    Garuda = "󰛓 "
+    Gentoo = " "
+    HardenedBSD = "󰞌 "
+    Illumos = "󰈸 "
+    Kali = " "
+    Linux = " "
+    Mabox = " "
+    Macos = " "
+    Manjaro = " "
+    Mariner = " "
+    MidnightBSD = " "
+    Mint = " "
+    NetBSD = " "
+    NixOS = " "
+    Nobara = " "
+    OpenBSD = "󰈺 "
+    openSUSE = " "
+    OracleLinux = "󰌷 "
+    Pop = " "
+    Raspbian = " "
+    Redhat = " "
+    RedHatEnterprise = " "
+    RockyLinux = " "
+    Redox = "󰀘 "
+    Solus = "󰠳 "
+    SUSE = " "
+    Ubuntu = " "
+    Unknown = " "
+    Void = " "
+    Windows = "󰍲 "
 
 [package]
-  symbol = "pkg "
+  symbol = "󰏗 "
+  format = '\[[$symbol$version]($style)\]'
 
 [perl]
-  symbol = "pl "
+  symbol = " "
 
 [php]
-  symbol = "php "
+  symbol = " "
 
 [pijul_channel]
-  symbol = "pijul "
+  symbol = " "
 
 [pixi]
-  symbol = "pixi "
-
-[pulumi]
-  symbol = "pulumi "
-
-[purescript]
-  symbol = "purs "
+  symbol = "󰏗 "
 
 [python]
-  symbol = "py "
-
-[quarto]
-  symbol = "quarto "
-
-[raku]
-  symbol = "raku "
-
-[rlang]
-  symbol = "r "
+  symbol = " "
+  format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 
 [ruby]
-  symbol = "rb "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
 [rust]
-  symbol = "rs "
+  symbol = "󱘗 "
+  format = '\[[$symbol($version)]($style)\]'
 
 [scala]
-  symbol = "scala "
-
-[spack]
-  symbol = "spack "
-
-[solidity]
-  symbol = "solidity "
-
-[status]
-  symbol = "[x](bold red) "
-
-[sudo]
-  symbol = "sudo "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
 [swift]
-  symbol = "swift "
+  symbol = " "
+  format = '\[[$symbol($version)]($style)\]'
 
-[typst]
-  symbol = "typst "
+[sudo]
+  format = '\[[as $symbol]($style)\]'
 
 [terraform]
-  symbol = "terraform "
+  format = '\[[$symbol$workspace]($style)\]'
 
-[zig]
-  symbol = "zig "
+[time]
+  format = '\[[$time]($style)\]'
+
+[username]
+  format = '\[[$user]($style)\]'

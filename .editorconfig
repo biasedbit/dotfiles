@@ -14,4 +14,5 @@ indent_size = 2
 indent_size = 4
 
 [**.py]
+# PEP 8 recommends 4 spaces for indentation
 indent_size = 4
