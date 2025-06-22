@@ -5,6 +5,10 @@ brew 'zsh'
 brew 'vim'
 brew 'git'
 brew 'tmux'
+
+# Required system libraries.
+brew 'libyaml' # rubybuild assumes this exists.
+
 # Handle the rest of the tools/runtimes with mise.
 brew 'mise'
 
