@@ -4,6 +4,7 @@
   jq = "latest"
   ripgrep = "latest"
   neovim = "latest"
+  lazygit = "latest"
   ruby = "3.4"       # global ruby required for custom ls (in utils.zsh partial)
 
 [settings]
