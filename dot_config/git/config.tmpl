@@ -20,12 +20,7 @@
   nuke = !git add . && git reset --hard HEAD
 [init]
 	defaultBranch = main
-[branch]
-  # Track remote branch on first push.
-  autoSetupMerge = always
 [push]
-  # When no branch is specified, only push the current branch to upstream.
-  default = upstream
   autoSetupRemote = true
 [checkout]
   defaultRemote = origin
