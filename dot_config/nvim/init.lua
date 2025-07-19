@@ -1,14 +1,2 @@
--- Show line numbers
-vim.opt.number = true
-
--- Render invisibles
-vim.opt.listchars = {
-  tab = '→ ',
-  space = '·',
-  nbsp = '␣',
-  trail = '•',
-  eol = '¬',
-  precedes = '«',
-  extends = '»'
-}
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
