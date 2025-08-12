@@ -21,6 +21,8 @@ cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'tailscale'
 cask 'docker'
+cask 'betterdisplay'
+cask 'rectangle'
 
 # --- Fonts
 cask 'font-sauce-code-pro-nerd-font'
